@@ -15,6 +15,6 @@ sed -i "s/admins: cn=Manager,dc=my-domain,dc=com/Admins: cn=admin,${SLAPD_DN}/g"
 sed -i "s/treesuffix: dc=yourdomain,dc=org/treesuffix: ${SLAPD_DN}/g" ${LAM_CONF_FILE}
 sed -i "s/types: suffix_user: ou=People,dc=my-domain,dc=com/types: suffix_user: ${USER_DN}/g" ${LAM_CONF_FILE}
 sed -i "s/types: suffix_group: ou=group,dc=my-domain,dc=com/types: suffix_group: ${GROUP_DN}/g" ${LAM_CONF_FILE}
-sed -i 's,^\([^#]*\)DocumentRoot.*$,\1DocumentRoot /usr/share/ldap-account-manager/,' /etc/apache2/sites-available/000-default.conf
+sed -i 's,^\([^#]*\)DocumentRoot.*$,\1DocumentRoot /var/www/html/lam/,' /etc/apache2/sites-available/000-default.conf
 
 exec /usr/local/bin/apache2-foreground
