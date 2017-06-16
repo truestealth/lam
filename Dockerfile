@@ -37,6 +37,7 @@ RUN curl https://nchc.dl.sourceforge.net/project/lam/LAM/${LAM_VERSION}/${LAM_PA
 
 COPY lam.conf.default /var/www/html/lam/config/lam.conf
 COPY setup.sh /usr/local/bin/setup.sh
+RUN chmod +x /usr/local/bin/setup.sh
 
 RUN chown -R www-data:www-data /var/www/html/lam
 
